@@ -33,7 +33,7 @@ Lass::Lass(const char *xoscString, int display) :
     SE_LogToConsole(false);
     SE_SetLogFilePath("");
     SE_CollisionDetection(true);
-    display = !!display;
+    display = display;
     SE_InitWithString(this->xoscString.c_str(), 0, display, 0, 0);
     RM_Init(SE_GetODRFilename());
 
