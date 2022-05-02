@@ -1,0 +1,8 @@
+.vscode
+.idea
+/bin
+/test/bin
+build
+cmake-build-debug
+log.txt
+__pycache__
