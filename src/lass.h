@@ -19,7 +19,7 @@ struct Vehicle {
 
 class Lass {
 public:
-    Lass(const char *xoscString, int display);
+    Lass(const char *xoscString, int display, int record);
 
     ~Lass();
 

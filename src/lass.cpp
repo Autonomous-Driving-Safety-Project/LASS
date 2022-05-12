@@ -27,14 +27,13 @@ struct ScenarioException : public std::exception {
     }
 };
 
-Lass::Lass(const char *xoscString, int display) :
+Lass::Lass(const char *xoscString, int display, int record) :
         xoscString(xoscString), dt(0.01) {
     Py_Initialize();
     SE_LogToConsole(false);
     SE_SetLogFilePath("");
     SE_CollisionDetection(true);
-    display = display;
-    SE_InitWithString(this->xoscString.c_str(), 0, display, 0, 0);
+    SE_InitWithString(this->xoscString.c_str(), 0, display, 0, record);
     RM_Init(SE_GetODRFilename());
 
     // Initialize OSI
@@ -269,7 +268,7 @@ dict Lass::vehicleDict() {
 }
 
 BOOST_PYTHON_MODULE (Lass) {
-    class_<Lass>("Lass", init<const char *, int>())
+    class_<Lass>("Lass", init<const char *, int, int>())
             .def("observe", &Lass::observe)
             .def("perceive", &Lass::perceive)
             .def("step", &Lass::step)
