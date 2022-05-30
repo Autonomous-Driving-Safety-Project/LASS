@@ -1228,6 +1228,9 @@ extern "C"
 		@return 0 if successful, -1 if not (e.g. wrong type)
 	*/
 	SE_DLL_API int SE_GetRoutePoint(int object_id, int route_index, SE_RouteInfo *routeinfo);
+
+    SE_DLL_API void SE_MemoryPoolClear(void);
+
 #ifdef __cplusplus
 }
 #endif

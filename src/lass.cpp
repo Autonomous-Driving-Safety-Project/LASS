@@ -178,6 +178,7 @@ Lass::~Lass() {
     }
     RM_Close();
     SE_Close();
+    SE_MemoryPoolClear();
 }
 
 list Lass::observe() {
